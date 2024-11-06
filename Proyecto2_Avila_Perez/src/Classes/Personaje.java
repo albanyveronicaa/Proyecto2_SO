@@ -1,16 +1,16 @@
-
 package Classes;
 
 import java.util.Random;
 
 public class Personaje {
+
     private int id;
     private String idString;
     private String serie;
     private int prioridad;
     private int calidadFinal;
     private int contadorRondas;
-    private int caballosFuerza;
+    private int fuerza;
 
     private Random r = new Random();
 
@@ -20,21 +20,20 @@ public class Personaje {
         this.prioridad = prioridad;
         this.calidadFinal = calidadFinal;
         this.contadorRondas = 0;
-        this.caballosFuerza = r.nextInt(900 - 400) + 400;
+        this.fuerza = r.nextInt(900 - 400) + 400;
 
     }
-
 
     public int getId() {
         return id;
     }
-    
+
     public void setId(int id) {
         this.id = id;
     }
-    
-    public int getCaballosFuerza(){
-        return this.caballosFuerza;
+
+    public int getFuerza() {
+        return this.fuerza;
     }
 
     public String getSerie() {
@@ -68,14 +67,15 @@ public class Personaje {
     public void setContadorRondas(int contadorRondas) {
         this.contadorRondas = contadorRondas;
     }
+
     @Override
     public String toString() {
-        return "Serie{" +
-                "id=" + id +
-                ", serie='" + serie + '\'' +
-                ", prioridad=" + prioridad +
-                ", calidadFinal=" + calidadFinal +
-                ", contadorRondas=" + contadorRondas +
-                '}';
+        return "Serie{"
+                + "id=" + id
+                + ", serie='" + serie + '\''
+                + ", prioridad=" + prioridad
+                + ", calidadFinal=" + calidadFinal
+                + ", contadorRondas=" + contadorRondas
+                + '}';
     }
 }

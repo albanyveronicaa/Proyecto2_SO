@@ -1,10 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package interfaz;
 
-import classes.Cola;
+import Classes.Cola;
 
 public class ColaUi extends javax.swing.JPanel {
 
@@ -41,23 +37,25 @@ public class ColaUi extends javax.swing.JPanel {
         mainPane.setForeground(new java.awt.Color(255, 255, 255));
         mainPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        titulo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         titulo.setForeground(new java.awt.Color(255, 255, 255));
         titulo.setText("Cola de prioridad");
-        mainPane.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
+        mainPane.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
 
         colaLabel.setBackground(new java.awt.Color(255, 255, 255));
         ScrollPane.setViewportView(colaLabel);
 
         mainPane.add(ScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 310, 50));
 
+        headLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         headLabel.setForeground(new java.awt.Color(255, 255, 255));
-        headLabel.setText("Head");
+        headLabel.setText("Cabeza");
         mainPane.add(headLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
+        tailLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         tailLabel.setForeground(new java.awt.Color(255, 255, 255));
-        tailLabel.setText("Tail");
-        mainPane.add(tailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
+        tailLabel.setText("Cola");
+        mainPane.add(tailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, -1));
 
         add(mainPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 100));
     }// </editor-fold>//GEN-END:initComponents
