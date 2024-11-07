@@ -37,7 +37,7 @@ public class MainPage extends javax.swing.JFrame {
         colaStarwarsUi2 = new interfaz.ColaUi();
         colaStarwarsUi3 = new interfaz.ColaUi();
         colaStarwarsUiRef = new interfaz.ColaUi();
-        racePanel = new javax.swing.JPanel();
+        Panel = new javax.swing.JPanel();
         uiStarWarsId = new javax.swing.JLabel();
         uiStarTrekId = new javax.swing.JLabel();
         statusLabel = new javax.swing.JLabel();
@@ -112,81 +112,81 @@ public class MainPage extends javax.swing.JFrame {
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 330, 600));
 
-        racePanel.setBackground(new java.awt.Color(153, 153, 153));
-        racePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Panel.setBackground(new java.awt.Color(153, 153, 153));
+        Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         uiStarWarsId.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         uiStarWarsId.setForeground(new java.awt.Color(255, 255, 255));
         uiStarWarsId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        racePanel.add(uiStarWarsId, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 230, 20));
+        Panel.add(uiStarWarsId, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 230, 20));
 
         uiStarTrekId.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         uiStarTrekId.setForeground(new java.awt.Color(255, 255, 255));
         uiStarTrekId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        racePanel.add(uiStarTrekId, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 230, 30));
+        Panel.add(uiStarTrekId, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 230, 30));
 
         statusLabel.setBackground(new java.awt.Color(0, 0, 0));
         statusLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         statusLabel.setForeground(new java.awt.Color(255, 255, 255));
         statusLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        racePanel.add(statusLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 490, 30));
-        racePanel.add(StarWarsPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 230, 220));
-        racePanel.add(StarTrekPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 230, 220));
+        Panel.add(statusLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 490, 30));
+        Panel.add(StarWarsPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 230, 220));
+        Panel.add(StarTrekPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 230, 220));
 
         StarWarsWinLabel.setBackground(new java.awt.Color(255, 255, 0));
         StarWarsWinLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         StarWarsWinLabel.setForeground(new java.awt.Color(255, 51, 0));
         StarWarsWinLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        racePanel.add(StarWarsWinLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 230, 20));
+        Panel.add(StarWarsWinLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 230, 20));
 
         StarTrekWinLabel.setBackground(new java.awt.Color(0, 204, 51));
         StarTrekWinLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         StarTrekWinLabel.setForeground(new java.awt.Color(255, 0, 0));
         StarTrekWinLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        racePanel.add(StarTrekWinLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 230, 20));
+        Panel.add(StarTrekWinLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 230, 20));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Calidad:");
-        racePanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+        Panel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Calidad:");
-        racePanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
+        Panel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("HP:");
-        racePanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 20, -1));
+        Panel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 20, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("HP:");
-        racePanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, -1, -1));
+        Panel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, -1, -1));
 
         calidadLamboUI.setForeground(new java.awt.Color(255, 255, 255));
         calidadLamboUI.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        racePanel.add(calidadLamboUI, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 60, -1));
+        Panel.add(calidadLamboUI, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 60, -1));
 
         lamboHP.setForeground(new java.awt.Color(255, 255, 255));
         lamboHP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        racePanel.add(lamboHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 60, -1));
+        Panel.add(lamboHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 60, -1));
 
         calidadBgUi.setForeground(new java.awt.Color(255, 255, 255));
         calidadBgUi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        racePanel.add(calidadBgUi, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 50, -1));
+        Panel.add(calidadBgUi, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 50, -1));
 
         bugattiHP.setForeground(new java.awt.Color(255, 255, 255));
         bugattiHP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        racePanel.add(bugattiHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 60, -1));
+        Panel.add(bugattiHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 60, -1));
 
         stage.setBackground(new java.awt.Color(204, 204, 204));
         stage.setMaximumSize(new java.awt.Dimension(2489, 168));
         stage.setMinimumSize(new java.awt.Dimension(2489, 168));
-        racePanel.add(stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 400));
+        Panel.add(stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 400));
 
-        jPanel2.add(racePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 500, 400));
+        jPanel2.add(Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 500, 400));
 
         sliderPane.setBackground(new java.awt.Color(255, 153, 0));
         sliderPane.setForeground(new java.awt.Color(255, 255, 255));
@@ -316,6 +316,7 @@ public class MainPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Panel;
     private javax.swing.JLabel StarTrekLogo;
     private javax.swing.JLabel StarTrekPer;
     private javax.swing.JLabel StarTrekWinLabel;
@@ -348,7 +349,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lamboHP;
-    private javax.swing.JPanel racePanel;
     private javax.swing.JPanel sliderPane;
     private javax.swing.JLabel stage;
     private javax.swing.JLabel statusLabel;
@@ -376,8 +376,8 @@ public class MainPage extends javax.swing.JFrame {
         String picStarWars = Integer.toString(numStarWars);
         String picStarTrek = Integer.toString(numStarTrek);
 
-        setImageLabel(StarWarsPer, ("src/imgs/StarWars" + picStarWars + ".png"));
-        setImageLabel(StarTrekPer, ("src/imgs/StarTrek" + picStarTrek + ".png"));
+        setImageLabel(StarWarsPer, ("src/imgs/starwars" + picStarWars + ".png"));
+        setImageLabel(StarTrekPer, ("src/imgs/startrek" + picStarTrek + ".png"));
     }
 
     private void setTitulosColas() {
@@ -398,6 +398,7 @@ public class MainPage extends javax.swing.JFrame {
         labelName.setIcon(icon);
         this.repaint();
     }
+    
     // set StarWars and StarTrek (images)
 
     public ColaUi getColaStarwarsUi1() {
