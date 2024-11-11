@@ -74,7 +74,7 @@ public class InteligenciaArtificial extends Thread {
                             //decir que gano
                             GlobalUi.getMainPage().getStarWarsWinnerLabel().setText("Ganador!");
 
-                        } else if (winner.getSerie().equals("starwars")) {
+                        } else if (winner.getSerie().equals("startrek")) {
                             this.startrekWins++;
                             GlobalUi.getMainPage().getStarTrekWinsLabel().setText(Integer.toString(startrekWins));
                             GlobalUi.getMainPage().getStarTrekWinnerLabel().setText("Ganador!");
@@ -155,7 +155,7 @@ public class InteligenciaArtificial extends Thread {
                 winner = this.winnerByHP();
             }
 
-        } else { // la diferencia es mayor a 50 caballos, gana el que tenga mas caballos
+        } else { // la diferencia es mayor a 50 fuerzas, gana el que tenga mas fuerza
             winner = this.winnerByHP();
         }
 

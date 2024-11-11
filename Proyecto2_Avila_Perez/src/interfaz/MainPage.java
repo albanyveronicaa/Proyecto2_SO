@@ -6,6 +6,8 @@ import java.util.Random;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import java.net.URL;
+
 
 public class MainPage extends javax.swing.JFrame {
 
@@ -79,7 +81,7 @@ public class MainPage extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        StarWarsLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/logoZelda.png"))); // NOI18N
+        StarWarsLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/StarWarsLogo.png"))); // NOI18N
         jPanel3.add(StarWarsLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 120));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -188,7 +190,7 @@ public class MainPage extends javax.swing.JFrame {
 
         jPanel2.add(Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 500, 400));
 
-        sliderPane.setBackground(new java.awt.Color(255, 153, 0));
+        sliderPane.setBackground(new java.awt.Color(207, 153, 14));
         sliderPane.setForeground(new java.awt.Color(255, 255, 255));
         sliderPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -239,7 +241,10 @@ public class MainPage extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 224, 64));
         jLabel2.setText("Juegos ganados");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
-        jPanel1.add(StarTrekLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 180, 120));
+
+        StarTrekLogo.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        StarTrekLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/StarTrekLogo.png"))); // NOI18N
+        jPanel1.add(StarTrekLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 180, 50));
 
         StarTrekWinsLabel.setBackground(new java.awt.Color(51, 51, 51));
         StarTrekWinsLabel.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
@@ -362,9 +367,9 @@ public class MainPage extends javax.swing.JFrame {
 
     private void init() {
         setTitulosColas();
-        setImageLabel(StarWarsLogo, "src/imgs/StarWarsLogo.png");
-        setImageLabel(StarTrekLogo, "src/imgs/StarTrekLogo.png");
-        setImageLabel(stage, "src/imgs/stage.jpg");
+        setImageLabel(StarWarsLogo, "/imgs/StarWarsLogo.png");
+        setImageLabel(StarTrekLogo, "/imgs/StarTrekLogo.png");
+        setImageLabel(stage, "/imgs/stage.jpg");
     }
 
     public void setPersonajesImgsUi() {
@@ -376,8 +381,8 @@ public class MainPage extends javax.swing.JFrame {
         String picStarWars = Integer.toString(numStarWars);
         String picStarTrek = Integer.toString(numStarTrek);
 
-        setImageLabel(StarWarsPer, ("src/imgs/starwars" + picStarWars + ".png"));
-        setImageLabel(StarTrekPer, ("src/imgs/startrek" + picStarTrek + ".png"));
+        setImageLabel(StarWarsPer, ("/imgs/starwars" + picStarWars + ".png"));
+        setImageLabel(StarTrekPer, ("/imgs/startrek" + picStarTrek + ".png"));
     }
 
     private void setTitulosColas() {
@@ -393,10 +398,15 @@ public class MainPage extends javax.swing.JFrame {
     }
 
     private void setImageLabel(JLabel labelName, String root) {
-        ImageIcon img = new ImageIcon(root);
-        Icon icon = new ImageIcon(img.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT));
-        labelName.setIcon(icon);
-        this.repaint();
+        URL imgURL = getClass().getResource(root);
+        if (imgURL != null) {
+            ImageIcon img = new ImageIcon(imgURL);
+            Icon icon = new ImageIcon(img.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT));
+            labelName.setIcon(icon);
+            this.repaint();
+        } else {
+            System.out.println("No se encontró la imagen en la ruta: " + root);
+        }
     }
     
     // set StarWars and StarTrek (images)
