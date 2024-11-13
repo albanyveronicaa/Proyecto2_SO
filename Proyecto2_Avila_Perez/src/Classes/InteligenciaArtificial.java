@@ -43,21 +43,21 @@ public class InteligenciaArtificial extends Thread {
 
                 } else {
                     // Decidiendo
-                    System.out.println("estoy decidiendo");
-                    GlobalUi.getMainPage().getStatusLabel().setText("Decidiendo");
-                    //tomar un numero random para determinar ganador. 0=star wars, 1=star trek
+                    System.out.println("Estoy decidiendo...");
+                    GlobalUi.getMainPage().getStatusLabel().setText("Decidiendo...");
+                    //tomar un número random para determinar ganador. 0=star wars, 1=star trek
                     Personaje winner = this.decideWinner();
 
                     Thread.sleep((long) (auxTime * 0.3));
 
-                    // entero para determinar resultado de la simulacion
+                    // entero para determinar resultado de la simulación
                     int decision = random.nextInt(100);
 
                     if (decision <= 40) { //hay ganador
-
-                        GlobalUi.getMainPage().getStatusLabel().setText("Hay un ganador");
+                        System.out.println("Ganó alguien");
+                        GlobalUi.getMainPage().getStatusLabel().setText("¡Hay un ganador!");
                         String per = winner.getSerie();
-                        if (per.equals("Starwars")) {
+                        if (per.equals("starwars")) {
                             winners[winnersPointer] = "Star Wars - " + Integer.toString(winner.getId());
                         } else if (per.equals("startrek")) {
                             winners[winnersPointer] = "Star Trek - " + Integer.toString(winner.getId());
@@ -67,38 +67,38 @@ public class InteligenciaArtificial extends Thread {
                         }
 
                         GlobalUi.getMainPage().getWinnersLabel().setText(printWinners());
-                        if (winner.getSerie().equals("Starwars")) {
+                        if (winner.getSerie().equals("starwars")) {
                             this.starwarsWins++;
                             //sumar contador de carreras ganadas
                             GlobalUi.getMainPage().getStarWarsWinsLabel().setText(Integer.toString(starwarsWins));
                             //decir que gano
-                            GlobalUi.getMainPage().getStarWarsWinnerLabel().setText("Ganador!");
+                            GlobalUi.getMainPage().getStarWarsWinnerLabel().setText("¡Ganador!");
 
                         } else if (winner.getSerie().equals("startrek")) {
                             this.startrekWins++;
                             GlobalUi.getMainPage().getStarTrekWinsLabel().setText(Integer.toString(startrekWins));
-                            GlobalUi.getMainPage().getStarTrekWinnerLabel().setText("Ganador!");
+                            GlobalUi.getMainPage().getStarTrekWinnerLabel().setText("¡Ganador!");
                         }
 
                         System.out.println("Star Wars ganadas: " + starwarsWins);
                         System.out.println("Star Trek ganadas: " + startrekWins);
                         Thread.sleep((long) (auxTime * 0.5));
 
-                    } else if (decision <= 67) {
-                        System.out.println("hubo empate");
-                        GlobalUi.getMainPage().getStatusLabel().setText("Hubo Empate");
+                    } else if (decision <= 27) {
+                        System.out.println("Hubo empate");
+                        GlobalUi.getMainPage().getStatusLabel().setText("¡Hubo Empate!");
                         Thread.sleep((long) (auxTime * 0.5));
                         Main.sistemaOperativo.regresarPersonaCola1(personaStarwars);
                         Main.sistemaOperativo.regresarPersonaCola1(personaStartrek);
                     } else { //van a refuerzo
-                        System.out.println("nos vamos a refuerzo");
-                        GlobalUi.getMainPage().getStatusLabel().setText("Vamos a refuerzo");
+                        System.out.println("Nos vamos a refuerzo");
+                        GlobalUi.getMainPage().getStatusLabel().setText("¡Vamos a refuerzo!");
                         Thread.sleep((long) (auxTime * 0.5));
                         //enviar a la cola de refuerzo
                         Main.sistemaOperativo.enviarPersonajesColaRefuerzo(this.personaStarwars, this.personaStartrek);
                     }
-                    System.out.println("Esperando");
-                    GlobalUi.getMainPage().getStatusLabel().setText("Esperando");
+                    System.out.println("Esperando...");
+                    GlobalUi.getMainPage().getStatusLabel().setText("Esperando...");
                 }
                 this.administrador.updateColasUi();
 
@@ -144,7 +144,7 @@ public class InteligenciaArtificial extends Thread {
 
         Personaje winner = null;
 
-        // si la diferencia de caballos de fuerza es <= 50, entonces gana el de mejor calidad, si es la misma, gana el que tenga mas caballos
+        // si la diferencia de fuerza es <= 50, entonces gana el de mejor calidad, si es la misma, gana el que tenga mas fueza
         if (Math.abs(personaStarwars.getFuerza() - personaStartrek.getFuerza()) <= 50) {
 
             if (this.personaStartrek.getCalidadFinal() < this.personaStarwars.getCalidadFinal()) {

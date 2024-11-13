@@ -132,20 +132,20 @@ public class MainPage extends javax.swing.JFrame {
         statusLabel.setForeground(new java.awt.Color(255, 255, 255));
         statusLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Panel.add(statusLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 490, 30));
-        Panel.add(StarWarsPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 230, 220));
-        Panel.add(StarTrekPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 230, 220));
+        Panel.add(StarWarsPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 230, 200));
+        Panel.add(StarTrekPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 230, 200));
 
-        StarWarsWinLabel.setBackground(new java.awt.Color(255, 255, 0));
+        StarWarsWinLabel.setBackground(new java.awt.Color(255, 255, 255));
         StarWarsWinLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        StarWarsWinLabel.setForeground(new java.awt.Color(255, 51, 0));
+        StarWarsWinLabel.setForeground(new java.awt.Color(255, 255, 255));
         StarWarsWinLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Panel.add(StarWarsWinLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 230, 20));
+        Panel.add(StarWarsWinLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 230, 30));
 
-        StarTrekWinLabel.setBackground(new java.awt.Color(0, 204, 51));
+        StarTrekWinLabel.setBackground(new java.awt.Color(255, 255, 255));
         StarTrekWinLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        StarTrekWinLabel.setForeground(new java.awt.Color(255, 0, 0));
+        StarTrekWinLabel.setForeground(new java.awt.Color(255, 255, 255));
         StarTrekWinLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Panel.add(StarTrekWinLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 230, 20));
+        Panel.add(StarTrekWinLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, 230, 30));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -159,13 +159,13 @@ public class MainPage extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("HP:");
-        Panel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 20, -1));
+        jLabel7.setText("Fuerza:");
+        Panel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 50, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("HP:");
-        Panel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, -1, -1));
+        jLabel8.setText("Fuerza:");
+        Panel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 50, -1));
 
         calidadLamboUI.setForeground(new java.awt.Color(255, 255, 255));
         calidadLamboUI.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -188,7 +188,7 @@ public class MainPage extends javax.swing.JFrame {
         stage.setMinimumSize(new java.awt.Dimension(2489, 168));
         Panel.add(stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 400));
 
-        jPanel2.add(Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 500, 400));
+        jPanel2.add(Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 500, 400));
 
         sliderPane.setBackground(new java.awt.Color(207, 153, 14));
         sliderPane.setForeground(new java.awt.Color(255, 255, 255));
@@ -215,7 +215,7 @@ public class MainPage extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Seleccionar tiempo de simulacion");
+        jLabel3.setText("Tiempo de Simulación");
         sliderPane.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 30));
 
         jPanel2.add(sliderPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 570, 300, 90));
@@ -401,14 +401,13 @@ public class MainPage extends javax.swing.JFrame {
         URL imgURL = getClass().getResource(root);
         if (imgURL != null) {
             ImageIcon img = new ImageIcon(imgURL);
-            Icon icon = new ImageIcon(img.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT));
-            labelName.setIcon(icon);
-            this.repaint();
+        Icon icon = new ImageIcon(img.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT));
+        labelName.setIcon(icon);
+        this.repaint();
         } else {
             System.out.println("No se encontró la imagen en la ruta: " + root);
-        }
     }
-    
+    }
     // set StarWars and StarTrek (images)
 
     public ColaUi getColaStarwarsUi1() {

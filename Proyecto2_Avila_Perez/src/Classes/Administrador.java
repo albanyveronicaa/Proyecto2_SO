@@ -60,9 +60,11 @@ public class Administrador extends Thread {
         this.startrekColaNivel1 = new Cola();
         this.startrekColaNivel2 = new Cola();
         this.startrekColaNivel3 = new Cola();
+
         this.starwarsColaNivel1 = new Cola();
         this.starwarsColaNivel2 = new Cola();
         this.starwarsColaNivel3 = new Cola();
+
         this.starwarsRefuerzo = new Cola();
         this.startrekRefuerzo = new Cola();
 
@@ -114,7 +116,7 @@ public class Administrador extends Thread {
                 GlobalUi.getMainPage().getUiStarWarsId().setText(("Star Wars - " + starwars.getId()));
                 GlobalUi.getMainPage().getUiStarTrekId().setText(("Star Trek - " + startrek.getId()));
                 GlobalUi.getMainPage().setPersonajesImgsUi();
-               
+
                 // actualizar HP y calidad en interfaz
                 GlobalUi.getMainPage().getCalidadStarWarsUi().setText(Integer.toString((int) starwars.getCalidadFinal()));
                 GlobalUi.getMainPage().getCalidadStarTrekUi().setText(Integer.toString((int) startrek.getCalidadFinal()));
@@ -331,30 +333,33 @@ public class Administrador extends Thread {
     }
 
     public int calidadFinal() {
-        int calidadCarroceria = 0;
+        int calidadHabilidad = 0;
         int prioridadRandom = porcentaje.nextInt(100);
         if (prioridadRandom <= 60) {
-            calidadCarroceria = 1;
+            calidadHabilidad = 1;
         }
-        int calidadChasis = 0;
+        
+        int calidadPuntosVida = 0;
         prioridadRandom = porcentaje.nextInt(100);
         if (prioridadRandom <= 70) {
-            calidadChasis = 1;
+            calidadPuntosVida = 1;
         }
 
-        int calidadMotor = 0;
+        int calidadFuerza = 0;
         prioridadRandom = porcentaje.nextInt(100);
         if (prioridadRandom <= 50) {
-            calidadMotor = 1;
+            calidadFuerza = 1;
         }
 
-        int calidadRueda = 0;
+        int calidadAgilidad = 0;
         prioridadRandom = porcentaje.nextInt(100);
         if (prioridadRandom <= 40) {
-            calidadRueda = 1;
+            calidadAgilidad = 1;
         }
+        
         int prioridadFinal = 0;
-        int sumaCalidad = calidadCarroceria + calidadRueda + calidadMotor + calidadChasis;
+        
+        int sumaCalidad = calidadHabilidad + calidadPuntosVida + calidadFuerza + calidadAgilidad;
         if (sumaCalidad >= 3) {
             prioridadFinal = 1;
         } else if (sumaCalidad == 2) {

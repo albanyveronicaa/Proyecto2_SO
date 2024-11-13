@@ -1,4 +1,3 @@
-
 package Classes;
 
 import javax.swing.JOptionPane;
@@ -38,7 +37,7 @@ public class Cola {
 
     public void desencolar() {
         if (this.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "La cola esta vacia");
+            JOptionPane.showMessageDialog(null, "La cola está vacia");
         } else if (size == 1) {
             this.empty();
         } else {
@@ -65,9 +64,9 @@ public class Cola {
                 this.desencolar();
                 
                 if (actual.getElement().getSerie().equals("starwars")) {
-                    printCola += "Star Wars-" + actual.getElement().getId() + ", ";
+                    printCola += "Star Wars - " + actual.getElement().getId() + ", ";
                 } else if (actual.getElement().getSerie().equals("startrek")) {
-                    printCola += "Star Trek-" + actual.getElement().getId() + ", ";
+                    printCola += "Star Trek - " + actual.getElement().getId() + ", ";
                 }
                 this.encolar(actual.getElement());
             }
