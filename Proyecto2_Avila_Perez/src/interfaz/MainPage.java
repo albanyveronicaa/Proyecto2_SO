@@ -9,6 +9,10 @@ import javax.swing.JLabel;
 import java.net.URL;
 
 
+/**
+ * La clase MainPage representa la interfaz gráfica principal de la aplicación.
+ * Proporciona métodos para inicializar la interfaz y actualizar elementos visuales como imágenes y etiquetas.
+ */
 public class MainPage extends javax.swing.JFrame {
 
     /**
@@ -365,6 +369,9 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JScrollPane winnersScrollPane;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Método de inicialización que configura los títulos de las colas y establece las imágenes iniciales en la interfaz.
+     */
     private void init() {
         setTitulosColas();
         setImageLabel(StarWarsLogo, "/imgs/StarWarsLogo.png");
@@ -372,6 +379,9 @@ public class MainPage extends javax.swing.JFrame {
         setImageLabel(stage, "/imgs/stage.jpg");
     }
 
+    /**
+     * Establece imágenes aleatorias para los personajes de Star Wars y Star Trek en la interfaz.
+     */
     public void setPersonajesImgsUi() {
 
         Random r = new Random();
@@ -385,6 +395,9 @@ public class MainPage extends javax.swing.JFrame {
         setImageLabel(StarTrekPer, ("/imgs/startrek" + picStarTrek + ".png"));
     }
 
+    /**
+     * Establece los títulos para las colas de prioridad y refuerzo en la interfaz de usuario.
+     */
     private void setTitulosColas() {
         this.colaStarwarsUi1.setTitulo("Cola de prioridad 1");
         this.colaStarwarsUi2.setTitulo("Cola de prioridad 2");
@@ -397,98 +410,205 @@ public class MainPage extends javax.swing.JFrame {
         this.colaStartrekUiRef.setTitulo("Cola de refuerzo");
     }
 
+    /**
+     * Establece una imagen en un JLabel especificado utilizando la ruta proporcionada.
+     *
+     * @param labelName JLabel donde se establecerá la imagen.
+     * @param root      Ruta de la imagen a cargar.
+     */
     private void setImageLabel(JLabel labelName, String root) {
         URL imgURL = getClass().getResource(root);
         if (imgURL != null) {
             ImageIcon img = new ImageIcon(imgURL);
-        Icon icon = new ImageIcon(img.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT));
-        labelName.setIcon(icon);
-        this.repaint();
+            Image scaledImage = img.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT);
+            ImageIcon icon = new ImageIcon(scaledImage);
+            labelName.setIcon(icon);
+            this.repaint();
         } else {
             System.out.println("No se encontró la imagen en la ruta: " + root);
+        }
     }
-    }
-    // set StarWars and StarTrek (images)
 
+    // Métodos getter para obtener referencias a las colas y etiquetas en la interfaz
+
+    /**
+     * Obtiene la cola de prioridad 1 de Star Wars en la interfaz.
+     *
+     * @return Instancia de ColaUi correspondiente a la cola de prioridad 1 de Star Wars.
+     */
     public ColaUi getColaStarwarsUi1() {
         return colaStarwarsUi1;
     }
 
+    /**
+     * Obtiene la cola de prioridad 2 de Star Wars en la interfaz.
+     *
+     * @return Instancia de ColaUi correspondiente a la cola de prioridad 2 de Star Wars.
+     */
     public ColaUi getColaStarwarsUi2() {
         return colaStarwarsUi2;
     }
 
+    /**
+     * Obtiene la cola de prioridad 3 de Star Wars en la interfaz.
+     *
+     * @return Instancia de ColaUi correspondiente a la cola de prioridad 3 de Star Wars.
+     */
     public ColaUi getColaStarwarsUi3() {
         return colaStarwarsUi3;
     }
 
+    /**
+     * Obtiene la cola de refuerzo de Star Wars en la interfaz.
+     *
+     * @return Instancia de ColaUi correspondiente a la cola de refuerzo de Star Wars.
+     */
     public ColaUi getColaStarwarsUiRef() {
         return colaStarwarsUiRef;
     }
 
+    /**
+     * Obtiene la cola de prioridad 1 de Star Trek en la interfaz.
+     *
+     * @return Instancia de ColaUi correspondiente a la cola de prioridad 1 de Star Trek.
+     */
     public ColaUi getColaStartrekUi1() {
         return colaStartrekUi1;
     }
 
+    /**
+     * Obtiene la cola de prioridad 2 de Star Trek en la interfaz.
+     *
+     * @return Instancia de ColaUi correspondiente a la cola de prioridad 2 de Star Trek.
+     */
     public ColaUi getColaStartrekUi2() {
         return colaStartrekUi2;
     }
 
+    /**
+     * Obtiene la cola de prioridad 3 de Star Trek en la interfaz.
+     *
+     * @return Instancia de ColaUi correspondiente a la cola de prioridad 3 de Star Trek.
+     */
     public ColaUi getColaStartrekUi3() {
         return colaStartrekUi3;
     }
 
+    /**
+     * Obtiene la cola de refuerzo de Star Trek en la interfaz.
+     *
+     * @return Instancia de ColaUi correspondiente a la cola de refuerzo de Star Trek.
+     */
     public ColaUi getColaStartrekUiRef() {
         return colaStartrekUiRef;
     }
 
+    /**
+     * Obtiene la etiqueta de los ganadores en la interfaz.
+     *
+     * @return JLabel correspondiente a los ganadores.
+     */
     public JLabel getWinnersLabel() {
         return this.winnersLabel;
     }
 
+    /**
+     * Obtiene la etiqueta que muestra el número de victorias de Star Wars.
+     *
+     * @return JLabel correspondiente al contador de victorias de Star Wars.
+     */
     public JLabel getStarWarsWinsLabel() {
         return StarWarsWinsLabel;
     }
 
+    /**
+     * Obtiene la etiqueta que muestra el número de victorias de Star Trek.
+     *
+     * @return JLabel correspondiente al contador de victorias de Star Trek.
+     */
     public JLabel getStarTrekWinsLabel() {
         return StarTrekWinsLabel;
     }
 
+    /**
+     * Obtiene la etiqueta que muestra el ID del personaje de Star Wars.
+     *
+     * @return JLabel correspondiente al ID de Star Wars.
+     */
     public JLabel getUiStarWarsId() {
         return uiStarWarsId;
     }
-    
+
+    /**
+     * Obtiene la etiqueta que muestra el ID del personaje de Star Trek.
+     *
+     * @return JLabel correspondiente al ID de Star Trek.
+     */
     public JLabel getUiStarTrekId() {
         return uiStarTrekId;
     }
 
+    /**
+     * Obtiene la etiqueta que muestra el estado actual del juego.
+     *
+     * @return JLabel correspondiente al estado.
+     */
     public JLabel getStatusLabel() {
         return this.statusLabel;
     }
 
+    /**
+     * Obtiene la etiqueta que indica si Star Wars es el ganador.
+     *
+     * @return JLabel correspondiente al indicador de ganador de Star Wars.
+     */
     public JLabel getStarWarsWinnerLabel() {
         return this.StarWarsWinLabel;
     }
 
+    /**
+     * Obtiene la etiqueta que indica si Star Trek es el ganador.
+     *
+     * @return JLabel correspondiente al indicador de ganador de Star Trek.
+     */
     public JLabel getStarTrekWinnerLabel() {
         return this.StarTrekWinLabel;
     }
-    
-    
+
+    /**
+     * Obtiene la etiqueta que muestra la calidad del personaje de Star Wars.
+     *
+     * @return JLabel correspondiente a la calidad de Star Wars.
+     */
     public JLabel getCalidadStarWarsUi() {
         return this.calidadLamboUI;
     }
 
+    /**
+     * Obtiene la etiqueta que muestra la calidad del personaje de Star Trek.
+     *
+     * @return JLabel correspondiente a la calidad de Star Trek.
+     */
     public JLabel getCalidadStarTrekUi() {
         return this.calidadBgUi;
     }
 
+    /**
+     * Obtiene la etiqueta que muestra los puntos de vida (HP) del personaje de Star Wars.
+     *
+     * @return JLabel correspondiente a los HP de Star Wars.
+     */
     public JLabel getStarWarsHP() {
         return this.lamboHP;
     }
 
+    /**
+     * Obtiene la etiqueta que muestra los puntos de vida (HP) del personaje de Star Trek.
+     *
+     * @return JLabel correspondiente a los HP de Star Trek.
+     */
     public JLabel getStarTrekHP() {
         return this.bugattiHP;
-
     }
+
 }
