@@ -385,8 +385,8 @@ public class MainPage extends javax.swing.JFrame {
     public void setPersonajesImgsUi() {
 
         Random r = new Random();
-        int numStarWars = r.nextInt(4) + 1;
-        int numStarTrek = r.nextInt(4) + 1;
+        int numStarWars = r.nextInt(20) + 1;
+        int numStarTrek = r.nextInt(16) + 1;
 
         String picStarWars = Integer.toString(numStarWars);
         String picStarTrek = Integer.toString(numStarTrek);
