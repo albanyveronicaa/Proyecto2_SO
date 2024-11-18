@@ -386,7 +386,7 @@ public class MainPage extends javax.swing.JFrame {
 
         Random r = new Random();
         int numStarWars = r.nextInt(20) + 1;
-        int numStarTrek = r.nextInt(16) + 1;
+        int numStarTrek = r.nextInt(20) + 1;
 
         String picStarWars = Integer.toString(numStarWars);
         String picStarTrek = Integer.toString(numStarTrek);
